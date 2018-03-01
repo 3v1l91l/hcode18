@@ -7,3 +7,9 @@ def load_data(filename):
     data = np.array([[int(x) for x in row.split()] for row in lines[1:]])
 
     return rows_num, col_num, vehicles_num, rides_num, ride_bonus, steps_num, data
+
+def get_distance(a, b, x, y):
+    return abs(b - y) + abs(a - x)
+
+def get_distance_arr(data):
+    return abs(data[:,0] - data[:,2]) + abs(data[:,1] - data[:,3])
